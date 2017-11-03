@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "勤怠編集(全体-月次)";
+}
+
+<style>
+    input[type="text"] {
+        width: 100px;
+    }
+</style>
+
+<div class="contents">
+    <table>
+        <tr>
+            <td>
+                <select name="yyyy">
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017" selected>2017</option>
+                </select>
+            </td>
+            <td>
+                <select name="MM">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03" selected>03</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    <button class="btn btn-info" type="button" onclick="indexView()">検索する</button>
+
+
+    <table class="table01">
+        <tr>
+            <th>日付</th>
+            <th>出勤時間</th>
+            <th>休憩開始時間</th>
+            <th>休憩終了時間</th>
+            <th>退勤時間</th>
+            <th>実勤務時間</th>
+            <th>ヘルプ先</th>
+        </tr>
+        <tr>
+            <td><input type="text" value="3/5"></td>
+            <td><input type="text" value="06:00"></td>
+            <td><input type="text" value="10:00"></td>
+            <td><input type="text" value="11:00"></td>
+            <td><input type="text" value="14:00"></td>
+            <td><input type="text" value="07:00"></td>
+            <td><input type="text" value="町田"></td>
+        </tr>
+    </table>
+
+    <button class="btn btn-default" type="button" onclick="indexView()">戻る</button>
+    <button class="btn btn-default" type="button" onclick="indexView()">変更する</button>
+
+</div>
+
+<script>
+	@* 一覧画面に遷移 *@
+    function indexView()
+	{
+		link('@Url.Action("Index", "TotalMonth")');
+	}
+</script>
