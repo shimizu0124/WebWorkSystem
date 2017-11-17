@@ -1,4 +1,5 @@
-﻿using System;
+﻿using WebWorker.ViewModels.TotalMonth;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,12 +11,24 @@ namespace WebWorker.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var viewModel = new TotalMonthListViewModel();
+
+            viewModel.WorkDay = "3/1";
+            viewModel.Name = "青山大地";
+            viewModel.StartTime = "06:00";
+            
+            return View(viewModel);
         }
 
         public ActionResult Edit()
         {
-            return View();
+            var viewModel = new TotalMonthListViewModel();
+
+            viewModel.WorkDay = "3/1";
+            viewModel.Name = "青山大地";
+            viewModel.StartTime = "06:00";
+
+            return View(viewModel);
         }
 
     }

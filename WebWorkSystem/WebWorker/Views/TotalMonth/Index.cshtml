@@ -1,4 +1,7 @@
-﻿@{
+﻿@using WebWorker.ViewModels.TotalMonth;
+@model TotalMonthListViewModel
+
+@{
     ViewBag.Title = "勤怠一覧(全体-月次)";
 }
 
@@ -30,28 +33,34 @@
     <button class="btn btn-info" type="button" onclick="indexView()">検索する</button>
 
 
-    <table class="table01">
+    <table class="table_TotalMonth">
         <tr>
-            <th>日付</th>
-            <th>出勤時間</th>
-            <th>休憩開始時間</th>
-            <th>休憩終了時間</th>
-            <th>退勤時間</th>
-            <th>実勤務時間</th>
-            <th>ヘルプ先</th>
+            <th></th>
+            @{
+                for (var i = 0; i < 15; i++)
+                {
+                    <th>@Model.Name</th>
+                }
+            }
         </tr>
-        <tr>
-            <td>3/1</td>
-            <td>06:00</td>
-            <td>10:00</td>
-            <td>11:00</td>
-            <td>14:00</td>
-            <td>07:00</td>
-            <td>町田</td>
-        </tr>
+        @{
+            for (var i = 0; i < 31; i++)
+            {
+                <tr>
+                    <td><a href="@Url.Action("Index", "TotalDay")">@Model.WorkDay</td>
+
+                    @{
+                        for (var j = 0; j < 15; j++)
+                        {
+                            <td>@Model.StartTime</td>
+                        }
+                    }
+                </tr>
+            }
+        }
     </table>
 
-    <button class="btn btn-primary" type="button" onclick="editView()">編集する</button>
+    @*<button class="btn btn-primary" type="button" onclick="editView()">編集する</button>*@
 </div>
 
 <script>
@@ -64,5 +73,5 @@
     function editView()
 	{
 		link('@Url.Action("Edit", "TotalMonth")');
-	}
+    }
 </script>

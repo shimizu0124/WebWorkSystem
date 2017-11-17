@@ -122,7 +122,42 @@ button.normal:active {          /*押しごたえ*/
     background-color: #FFFFFF;
 }
 
-input.item
+.table01 input.item
 {
-    width: 100px;
+    width: 90%;
+}
+
+
+/*
+    全体-月次のテーブル
+*/
+.table_TotalMonth
+{
+	border: 1px solid #000000;
+	width: 90%;
+    table-layout: fixed;    /*テーブル幅の固定*/
+    word-wrap: break-word;  /*文字の折り返し*/
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.table_TotalMonth th
+{
+    border: 1px solid #000000;
+    /*width: 100%;*/
+    padding : 1%;
+    background-color: #999999;
+}
+
+.table_TotalMonth td
+{
+	border: 1px solid #000000;
+    /*width: 100%;*/
+    padding : 1%;
+    background-color: #FFFFFF;
+}
+
+.table_TotalMonth input.item
+{
+    width: 95%;
 }
