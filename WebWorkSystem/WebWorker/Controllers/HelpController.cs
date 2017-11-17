@@ -6,13 +6,12 @@ using System.Web.Mvc;
 
 namespace WebWorker.Controllers
 {
-    public class DayController : Controller
+    public class HelpController : Controller
     {
         public ActionResult Index()
         {
             return View();
         }
-
 
         public ActionResult Edit()
         {

@@ -2,12 +2,6 @@
     ViewBag.Title = "勤怠編集(個人-日次)";
 }
 
-<style>
-    input[type="text"] {
-        width: 100px;
-    }
-</style>
-
 <div class="contents">
     <table>
         <tr>
@@ -19,6 +13,9 @@
                 </select>
             </td>
             <td>
+                <label>年</label>
+            </td>
+            <td>
                 <select name="MM">
                     <option value="01">01</option>
                     <option value="02">02</option>
@@ -26,11 +23,17 @@
                 </select>
             </td>
             <td>
+                <label>月</label>
+            </td>
+            <td>
                 <select name="dd">
-                    <option value="01">01</option>
+                    <option value="01" selected>01</option>
                     <option value="02">02</option>
-                    <option value="03" selected>03</option>
+                    <option value="03">03</option>
                 </select>
+            </td>
+            <td>
+                <label>日</label>
             </td>
         </tr>
     </table>
@@ -48,12 +51,17 @@
             <th>ヘルプ先</th>
         </tr>
         <tr>
-            <td><input type="text" value="06:00"></td>
-            <td><input type="text" value="10:00"></td>
-            <td><input type="text" value="11:00"></td>
-            <td><input type="text" value="14:00"></td>
-            <td><input type="text" value="07:00"></td>
-            <td><input type="text" value="町田"></td>
+            <td><input type="text" class="item" value="06:00"></td>
+            <td><input type="text" class="item" value="10:00"></td>
+            <td><input type="text" class="item" value="11:00"></td>
+            <td><input type="text" class="item" value="14:00"></td>
+            <td>07:00</td>
+            <td>
+                <select name="help">
+                    <option selected>町田</option>
+                    <option></option>
+                </select>
+            </td>
         </tr>
     </table>
 

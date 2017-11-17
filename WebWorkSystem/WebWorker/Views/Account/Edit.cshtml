@@ -1,6 +1,12 @@
 ﻿@{
-    ViewBag.Title = "勤怠編集(全体-月次)";
+    ViewBag.Title = "勤怠編集(全体-日次)";
 }
+
+<style>
+    input[type="text"] {
+        width: 100px;
+    }
+</style>
 
 <div class="contents">
     <table>
@@ -25,6 +31,16 @@
             <td>
                 <label>月</label>
             </td>
+            <td>
+                <select name="dd">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03" selected>03</option>
+                </select>
+            </td>
+            <td>
+                <label>日</label>
+            </td>
         </tr>
     </table>
 
@@ -33,7 +49,6 @@
 
     <table class="table01">
         <tr>
-            <th>日付</th>
             <th>出勤時間</th>
             <th>休憩開始時間</th>
             <th>休憩終了時間</th>
@@ -42,18 +57,12 @@
             <th>ヘルプ先</th>
         </tr>
         <tr>
-            <td>3/1</td>
-            <td><input type="text" class ="item" value="06:00"></td>
-            <td><input type="text" class ="item" value="10:00"></td>
-            <td><input type="text" class ="item" value="11:00"></td>
-            <td><input type="text" class ="item" value="14:00"></td>
+            <td><input type="text" value="06:00"></td>
+            <td><input type="text" value="10:00"></td>
+            <td><input type="text" value="11:00"></td>
+            <td><input type="text" value="14:00"></td>
             <td>07:00</td>
-            <td>
-                <select name="help">
-                    <option selected>町田</option>
-                    <option></option>
-                </select>
-            </td>
+            <td><input type="text" value="町田"></td>
         </tr>
     </table>
 
@@ -66,6 +75,9 @@
 	@* 一覧画面に遷移 *@
     function indexView()
 	{
-		link('@Url.Action("Index", "TotalMonth")');
+		link('@Url.Action("Index", "TotalDay")');
 	}
 </script>
+
+
+

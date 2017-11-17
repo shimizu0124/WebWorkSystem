@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "管理者情報一覧";
+}
+
+<div class="contents">
+    <button class="btn btn-info" type="button" onclick="registerView()">新規登録</button>
+
+
+    <table class="table01">
+        <tr>
+            <th>コード</th>
+            <th>名前</th>
+            <th>年齢</th>
+            <th>性別</th>
+            <th>入社日</th>
+            <th>退社日</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>0001</td>
+            <td>青山大地</td>
+            <td>21</td>
+            <td>男</td>
+            <td>2015/4/16</td>
+            <td></td>
+            <td><button class="btn btn-primary" type="button" onclick="editView()">編集</button></td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+@* 一覧画面に遷移 *@
+    function registerView() {
+        link('@Url.Action("Register", "Admin")');
+    }
+@* 編集画面に遷移 *@
+    function editView() {
+        link('@Url.Action("Edit", "Admin")');
+    }
+</script>

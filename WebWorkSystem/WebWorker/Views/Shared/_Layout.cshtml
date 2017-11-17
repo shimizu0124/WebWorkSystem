@@ -13,16 +13,11 @@
         勤怠管理システムFSP
         <br>
         <script>
-            //時刻データを取得して変数jikanに格納する
-            var jikan= new Date();
-
-            //時・分・秒を取得する
-            var hour = jikan.getHours();
-            var minute = jikan.getMinutes();
-            var second = jikan.getSeconds();
-
-            document.write(hour+"時",+minute+"分"+second+"秒");
+            t = setInterval("DspClk()", 500);
         </script>
+        <form name="ClkForm">
+            <INPUT type="text" name="Input">
+        </form>
     </div>
 
     <div class="sidemenu">
@@ -40,9 +35,19 @@
         <div class="MenuCell" onclick="link('@Url.Action("Index", "TotalMonth")');">
             <p>勤怠一覧(全体-月次)</p>
         </div>
+        <div class="MenuCell" onclick="link('@Url.Action("Index", "Help")');">
+            <p>ヘルプ集計</p>
+        </div>
+        <div class="MenuCell" onclick="link('@Url.Action("Index", "Worker")');">
+            <p>アルバイト情報一覧</p>
+        </div>
+        <div class="MenuCell" onclick="link('@Url.Action("Index", "Admin")');">
+            <p>管理者情報一覧</p>
+        </div>
         <div class="MenuCell" onclick="link('@Url.Action("Login", "Account")');">
             <p>ログイン</p>
         </div>
+        
     </div>
 
     <div class="contents">
@@ -58,6 +63,18 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+<script>
+    t = 0;
+    function DspClk() {
+      DD = new Date();
+      Hours = DD.getHours();
+      Minutes = DD.getMinutes();
+      Seconds = DD.getSeconds();
+      status = Hours + "時" + Minutes + "分" + Seconds +"秒";
+      document.ClkForm.Input.value = Hours + "時" + Minutes + "分" + Seconds +"秒";
+    }
+</script>
 
 <script>
     function link(url) {

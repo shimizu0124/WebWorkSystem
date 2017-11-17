@@ -196,6 +196,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\WorkerController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\TotalMonthController.cs" />
     <Compile Include="Controllers\TotalDayController.cs" />
     <Compile Include="Controllers\MonthController.cs" />
@@ -248,10 +251,19 @@
     <Content Include="Views\Month\Index.cshtml" />
     <Content Include="Views\Month\Edit.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\TotalDay\Edit.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
     <Content Include="Views\TotalDay\Index.cshtml" />
     <Content Include="Views\TotalMonth\Edit.cshtml" />
     <Content Include="Views\TotalMonth\Index.cshtml" />
+    <Content Include="Views\Help\Edit.cshtml" />
+    <Content Include="Views\Help\Index.cshtml" />
+    <Content Include="Views\Worker\Edit.cshtml" />
+    <Content Include="Views\Worker\Index.cshtml" />
+    <Content Include="Views\Worker\Register.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Register.cshtml" />
+    <Content Include="Views\TotalDay\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

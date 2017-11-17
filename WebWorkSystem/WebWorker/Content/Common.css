@@ -121,3 +121,8 @@ button.normal:active {          /*押しごたえ*/
     padding : 1%;
     background-color: #FFFFFF;
 }
+
+input.item
+{
+    width: 100px;
+}
