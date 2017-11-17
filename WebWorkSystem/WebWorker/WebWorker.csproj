@@ -209,6 +209,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Help\HelpListViewModel.cs" />
+    <Compile Include="ViewModels\TotalDay\TotalDayListViewModel.cs" />
     <Compile Include="ViewModels\Day\DayListViewModel.cs" />
     <Compile Include="ViewModels\Month\MonthListViewModel.cs" />
   </ItemGroup>

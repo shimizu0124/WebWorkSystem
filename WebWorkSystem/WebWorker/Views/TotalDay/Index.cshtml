@@ -1,4 +1,7 @@
-﻿@{
+﻿@using WebWorker.ViewModels.TotalDay;
+@model TotalDayListViewModel
+
+@{
     ViewBag.Title = "勤怠一覧(全体-日次)";
 }
 
@@ -6,15 +9,16 @@
     <table>
         <tr>
             <td>
+                <label>日付</label>
+            </td>
+            <td>
                 <select name="yyyy">
                     <option value="2015">2015</option>
                     <option value="2016">2016</option>
                     <option value="2017" selected>2017</option>
                 </select>
             </td>
-            <td>
-                <label>年</label>
-            </td>
+            <td>年</td>
             <td>
                 <select name="MM">
                     <option value="01">01</option>
@@ -22,9 +26,7 @@
                     <option value="03" selected>03</option>
                 </select>
             </td>
-            <td>
-                <label>月</label>
-            </td>
+            <td>月</td>
             <td>
                 <select name="dd">
                     <option value="01" selected>01</option>
@@ -32,9 +34,7 @@
                     <option value="03">03</option>
                 </select>
             </td>
-            <td>
-                <label>日</label>
-            </td>
+            <td>日</td>
         </tr>
     </table>
 
@@ -43,6 +43,7 @@
 
     <table class="table01">
         <tr>
+            <th>名前</th>
             <th>出勤時間</th>
             <th>休憩開始時間</th>
             <th>休憩終了時間</th>
@@ -50,14 +51,20 @@
             <th>実勤務時間</th>
             <th>ヘルプ先</th>
         </tr>
-        <tr>
-            <td>06:00</td>
-            <td>10:00</td>
-            <td>11:00</td>
-            <td>14:00</td>
-            <td>07:00</td>
-            <td>町田</td>
-        </tr>
+        @{
+            for (var i = 0; i < 10; i++)
+            {
+                <tr>
+                    <td>@Model.Name</td>
+                    <td>@Model.StartTime</td>
+                    <td>@Model.BreakStartTime</td>
+                    <td>@Model.BreakEndTime</td>
+                    <td>@Model.EndTime</td>
+                    <td>@Model.WorkTime</td>
+                    <td>@Model.Help</td>
+                </tr>
+            }
+        }
     </table>
 
 
