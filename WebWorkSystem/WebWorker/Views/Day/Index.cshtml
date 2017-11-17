@@ -1,4 +1,7 @@
-﻿@{
+﻿@using WebWorker.ViewModels.Day;
+@model DayListViewModel
+
+@{
     ViewBag.Title = "勤怠一覧(個人-日次)";
 }
 
@@ -51,12 +54,12 @@
             <th>ヘルプ先</th>
         </tr>
         <tr>
-            <td>06:00</td>
-            <td>10:00</td>
-            <td>11:00</td>
-            <td>14:00</td>
-            <td>07:00</td>
-            <td>町田</td>
+            <td>@Model.StartTime</td>
+            <td>@Model.BreakStartTime</td>
+            <td>@Model.BreakEndTime</td>
+            <td>@Model.EndTime</td>
+            <td>@Model.WorkTime</td>
+            <td>@Model.Help</td>
         </tr>
     </table>
 

@@ -1,4 +1,7 @@
-﻿@{
+﻿@using WebWorker.ViewModels.Month;
+@model MonthListViewModel
+
+@{
     ViewBag.Title = "勤怠編集(個人-月次)";
 }
 
@@ -41,20 +44,25 @@
             <th>実勤務時間</th>
             <th>ヘルプ先</th>
         </tr>
-        <tr>
-            <td>3/1</td>
-            <td><input type="text" class="item" value="06:00"></td>
-            <td><input type="text" class="item" value="10:00"></td>
-            <td><input type="text" class="item" value="11:00"></td>
-            <td><input type="text" class="item" value="14:00"></td>
-            <td>07:00</td>
-            <td>
-                <select name="help">
-                    <option selected>町田</option>
-                    <option></option>
-                </select>
-            </td>
-        </tr>
+        @{
+            for (var i = 0; i < 31; i++)
+            {
+                <tr>
+                    <td>@Model.WorkDay</td>
+                    <td><input type="text" class="item" value="@Model.StartTime"></td>
+                    <td><input type="text" class="item" value="@Model.BreakStartTime"></td>
+                    <td><input type="text" class="item" value="@Model.BreakEndTime"></td>
+                    <td><input type="text" class="item" value="@Model.EndTime"></td>
+                    <td>@Model.WorkTime</td>
+                    <td>
+                        <select name="help">
+                            <option selected>@Model.Help</option>
+                            <option></option>
+                        </select>
+                    </td>
+                </tr>
+            }
+        }
     </table>
 
     <button class="btn btn-default" type="button" onclick="indexView()">戻る</button>

@@ -1,4 +1,7 @@
-﻿@{
+﻿@using WebWorker.ViewModels.Month;
+@model MonthListViewModel
+
+@{
     ViewBag.Title = "勤怠一覧(個人-月次)";
 }
 
@@ -41,15 +44,42 @@
             <th>実勤務時間</th>
             <th>ヘルプ先</th>
         </tr>
-        <tr>
-            <td>3/1</td>
-            <td>06:00</td>
-            <td>10:00</td>
-            <td>11:00</td>
-            <td>14:00</td>
-            <td>07:00</td>
-            <td>町田</td>
-        </tr>
+        @{
+            for (var i = 0; i < 31; i++)
+            {
+                <tr>
+                    <td>@Model.WorkDay</td>
+                    <td>@Model.StartTime</td>
+                    <td>@Model.BreakStartTime</td>
+                    <td>@Model.BreakEndTime</td>
+                    <td>@Model.EndTime</td>
+                    <td>@Model.WorkTime</td>
+                    <td>@Model.Help</td>
+                </tr>
+            }
+        }
+
+        @*
+        @{
+            var list = new List<String>();
+            list.Add("いち");
+            list.Add("に");
+            list.Add("さん");
+            foreach (var item in list)
+            {
+                <tr>
+                    <td>@Html.Raw(item)</td>
+                    <td>06:00</td>
+                    <td>10:00</td>
+                    <td>11:00</td>
+                    <td>14:00</td>
+                    <td>07:00</td>
+                    <td>橋本</td>
+                </tr>
+            }
+        }
+        *@
+
     </table>
 
     <button class="btn btn-primary" type="button" onclick="editView()">編集する</button>
