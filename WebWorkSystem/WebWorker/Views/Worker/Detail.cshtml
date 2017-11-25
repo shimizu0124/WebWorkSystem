@@ -1,0 +1,70 @@
+﻿@using WebWorker.ViewModels.Worker
+@model WorkerListViewModel
+
+@{
+    ViewBag.Title = "アルバイト情報詳細";
+}
+
+<div class="contents">
+    <table class="table_User">
+        <tr>
+            <th>Id</th>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <th>名前</th>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <th>性別</th>
+            <td>@Model.Sex</td>
+        </tr>
+        <tr>
+            <th>生年月日</th>
+            <td>@Model.BirthDay</td>
+        </tr>
+        <tr>
+            <th>入社日</th>
+            <td>@Model.StartTime</td>
+        </tr>
+        <tr>
+            <th>退社日</th>
+            <td>@Model.EndTime</td>
+        </tr>
+        <tr>
+            <th>パスワード</th>
+            <td>@Model.Password</td>
+        </tr>
+    </table>
+
+    <div>
+        <p>店舗</p>
+        <table class="table_User">
+            <tr>
+                <th>店舗</th>
+                <th>期間From</th>
+                <th>期間To</th>
+            </tr>
+            <tr>
+                <td>@Model.Store</td>
+                <td>@Model.StoreFrom</td>
+                <td>@Model.StoreTo</td>
+            </tr>
+        </table>
+    </div>
+
+    <button class="btn btn-default" type="button" onclick="indexView()">戻る</button>
+    <button class="btn btn-primary" type="button" onclick="editView()">編集する</button>
+
+</div>
+
+<script>
+@* 一覧画面に遷移 *@
+    function indexView() {
+        link('@Url.Action("Index", "Worker")');
+    }
+@* 編集画面に遷移 *@
+    function editView() {
+        link('@Url.Action("Edit", "Worker")');
+    }
+</script>

@@ -1,4 +1,7 @@
-﻿@{
+﻿@using WebWorker.ViewModels.Admin;
+@model AdminListViewModel
+
+@{
     ViewBag.Title = "管理者情報一覧";
 }
 
@@ -8,23 +11,30 @@
 
     <table class="table01">
         <tr>
-            <th>コード</th>
+            <th>Id</th>
             <th>名前</th>
-            <th>年齢</th>
             <th>性別</th>
+            <th>生年月日</th>
+            <th>年齢</th>
             <th>入社日</th>
             <th>退社日</th>
             <th></th>
         </tr>
-        <tr>
-            <td>0001</td>
-            <td>青山大地</td>
-            <td>21</td>
-            <td>男</td>
-            <td>2015/4/16</td>
-            <td></td>
-            <td><button class="btn btn-primary" type="button" onclick="editView()">編集</button></td>
-        </tr>
+        @{
+            for (var i = 0; i < 5; i++)
+            {
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Sex</td>
+                    <td>@Model.BirthDay</td>
+                    <td>@Model.Age</td>
+                    <td>@Model.StartTime</td>
+                    <td>@Model.EndTime</td>
+                    <td><button class="btn btn-primary" type="button" onclick="editView()">詳細</button></td>
+                </tr>
+            }
+        }   
     </table>
 
 </div>
