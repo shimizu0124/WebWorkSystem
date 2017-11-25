@@ -25,21 +25,5 @@ namespace WebWorker.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Edit()
-        {
-            var viewModel = new HelpListViewModel();
-
-            viewModel.WorkDay = "3/1";
-            viewModel.Name = "青山大地";
-            viewModel.StartTime = "06:00";
-            viewModel.BreakStartTime = "10:00";
-            viewModel.BreakEndTime = "11:00";
-            viewModel.EndTime = "14:00";
-            viewModel.WorkTime = "07:00";
-            viewModel.Help = "町田";
-
-            return View(viewModel);
-        }
-
     }
 }

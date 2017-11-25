@@ -63,7 +63,7 @@
         </table>
     </div>
 
-    <button class="btn btn-default" type="button" onclick="indexView()">戻る</button>
+    <button class="btn btn-default" type="button" onclick="detailView()">戻る</button>
     <button class="btn btn-default" type="button" onclick="indexView()">変更する</button>
     <button class="btn btn-default" type="button" onclick="indexView()">削除する</button>
 
@@ -74,7 +74,12 @@
     function indexView()
 	{
 		link('@Url.Action("Index", "Admin")');
-	}
+    }
+    @* 詳細画面に遷移 *@
+    function detailView()
+    {
+        link('@Url.Action("Detail", "Admin")');
+    }
 </script>
 
 

@@ -16,17 +16,7 @@ namespace WebWorker.Controllers
             viewModel.WorkDay = "3/1";
             viewModel.Name = "青山大地";
             viewModel.StartTime = "06:00";
-            
-            return View(viewModel);
-        }
-
-        public ActionResult Edit()
-        {
-            var viewModel = new TotalMonthListViewModel();
-
-            viewModel.WorkDay = "3/1";
-            viewModel.Name = "青山大地";
-            viewModel.StartTime = "06:00";
+            viewModel.EndTime = "14:00";
 
             return View(viewModel);
         }

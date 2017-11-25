@@ -31,7 +31,7 @@
                     <td>@Model.Age</td>
                     <td>@Model.StartTime</td>
                     <td>@Model.EndTime</td>
-                    <td><button class="btn btn-primary" type="button" onclick="editView()">詳細</button></td>
+                    <td><button class="btn btn-primary" type="button" onclick="detailView()">詳細</button></td>
                 </tr>
             }
         }   
@@ -44,8 +44,8 @@
     function registerView() {
         link('@Url.Action("Register", "Admin")');
     }
-@* 編集画面に遷移 *@
-    function editView() {
-        link('@Url.Action("Edit", "Admin")');
+@* 詳細画面に遷移 *@
+    function detailView() {
+        link('@Url.Action("Detail", "Admin")');
     }
 </script>
