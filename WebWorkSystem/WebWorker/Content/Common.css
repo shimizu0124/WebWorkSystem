@@ -127,6 +127,35 @@ button.normal:active {          /*押しごたえ*/
     width: 90%;
 }
 
+/*
+    実勤務時間のテーブル
+*/
+.table_TotalWorkTime
+{
+	border: 1px solid #000000;
+	width: 30%;
+    table-layout: fixed;    /*テーブル幅の固定*/
+    word-wrap: break-word;  /*文字の折り返し*/
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.table_TotalWorkTime th
+{
+    border: 1px solid #000000;
+    /*width: 100%;*/
+    padding : 1%;
+    background-color: #999999;
+}
+
+.table_TotalWorkTime td
+{
+	border: 1px solid #000000;
+    /*width: 100%;*/
+    padding : 1%;
+    background-color: #FFFFFF;
+}
+
 
 /*
     全体-月次のテーブル

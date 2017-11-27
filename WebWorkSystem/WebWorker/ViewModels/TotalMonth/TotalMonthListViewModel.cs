@@ -15,5 +15,7 @@ namespace WebWorker.ViewModels.TotalMonth
 		public string StartTime { get; set; }
         /// <summary> 退勤時間 </summary>
 		public string EndTime { get; set; }
+        /// <summary> 実勤務時間 </summary>
+		public string WorkTime { get; set; }
     }
 }

@@ -17,6 +17,7 @@ namespace WebWorker.Controllers
             viewModel.Name = "青山大地";
             viewModel.StartTime = "06:00";
             viewModel.EndTime = "14:00";
+            viewModel.WorkTime = "100:00";
 
             return View(viewModel);
         }
