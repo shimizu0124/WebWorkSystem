@@ -15,8 +15,6 @@ namespace WebWorker.ViewModels.Admin
 		public string Sex { get; set; }
         /// <summary> 生年月日 </summary>
 		public string BirthDay { get; set; }
-        /// <summary> 年齢 </summary>
-		public int Age { get; set; }
         /// <summary> 入社日 </summary>
 		public string StartTime { get; set; }
         /// <summary> 退社日 </summary>

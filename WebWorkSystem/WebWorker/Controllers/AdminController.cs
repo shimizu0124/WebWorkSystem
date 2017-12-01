@@ -17,7 +17,6 @@ namespace WebWorker.Controllers
             viewModel.Name = "管理者";
             viewModel.Sex = "男";
             viewModel.BirthDay = "1987/11/01";
-            viewModel.Age = 30;
             viewModel.StartTime = "2010/04/06";
             viewModel.EndTime = "";
 
@@ -32,7 +31,6 @@ namespace WebWorker.Controllers
             viewModel.Name = "管理者";
             viewModel.Sex = "男";
             viewModel.BirthDay = "1987/11/01";
-            viewModel.Age = 30;
             viewModel.StartTime = "2010/04/06";
             viewModel.EndTime = "";
             viewModel.Password = "password";
@@ -51,7 +49,6 @@ namespace WebWorker.Controllers
             viewModel.Name = "管理者";
             viewModel.Sex = "男";
             viewModel.BirthDay = "1987/11/01";
-            viewModel.Age = 30;
             viewModel.StartTime = "2010/04/06";
             viewModel.EndTime = "";
             viewModel.Password = "password";
