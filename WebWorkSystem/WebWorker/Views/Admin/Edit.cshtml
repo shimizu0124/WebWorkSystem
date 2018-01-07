@@ -8,37 +8,49 @@
 <div class="contents">
     <table class="table_User">
         <tr>
-            <th>Id</th>
-            <td>@Model.Id</td>
+            <th>AdminユーザId</th>
+            <td>@Model.admin_user_id</td>
         </tr>
         <tr>
-            <th>名前</th>
-            <td><input type="text" class="item" value="@Model.Name"></td>
+            <th>姓</th>
+            <td><input type="text" class="item" value="@Model.familyname"></td>
+        </tr>
+        <tr>
+            <th>名</th>
+            <td><input type="text" class="item" value="@Model.firstname"></td>
+        </tr>
+        <tr>
+            <th>セイ</th>
+            <td><input type="text" class="item" value="@Model.familyname_kana"></td>
+        </tr>
+        <tr>
+            <th>メイ</th>
+            <td><input type="text" class="item" value="@Model.firstname_kana"></td>
         </tr>
         <tr>
             <th>性別</th>
             <td>
                 <select name="sex">
-                    <option selected>@Model.Sex</option>
-                    <option>女</option>
+                    <option selected>@Model.sex_type</option>
+                    <option>2</option>
                 </select>
             </td>
         </tr>
         <tr>
             <th>生年月日</th>
-            <td><input type="text" class="item" value="@Model.BirthDay"></td>
+            <td><input type="text" class="item" value="@Model.birthday"></td>
         </tr>
         <tr>
             <th>入社日</th>
-            <td><input type="text" class="item" value="@Model.StartTime"></td>
+            <td><input type="text" class="item" value="@Model.joined_date"></td>
         </tr>
         <tr>
             <th>退社日</th>
-            <td><input type="text" class="item" value="@Model.EndTime"></td>
+            <td><input type="text" class="item" value="@Model.leaved_date"></td>
         </tr>
         <tr>
             <th>パスワード</th>
-            <td><input type="text" class="item" value="@Model.Password"></td>
+            <td><input type="text" class="item" value="@Model.password"></td>
         </tr>
     </table>
 
@@ -53,12 +65,12 @@
             <tr>
                 <td>
                     <select name="store">
-                        <option selected>@Model.Store</option>
+                        <option selected>@Model.store</option>
                         <option></option>
                     </select>
                 </td>
-                <td><input type="text" class="item" value="@Model.StoreFrom"></td>
-                <td><input type="text" class="item" value="@Model.StoreTo"></td>
+                <td><input type="text" class="item" value="@Model.store_from"></td>
+                <td><input type="text" class="item" value="@Model.store_to"></td>
             </tr>
         </table>
     </div>

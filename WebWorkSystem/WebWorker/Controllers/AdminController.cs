@@ -13,12 +13,13 @@ namespace WebWorker.Controllers
         {
             var viewModel = new AdminListViewModel();
 
-            viewModel.Id = 10001;
-            viewModel.Name = "管理者";
-            viewModel.Sex = "男";
-            viewModel.BirthDay = "1987/11/01";
-            viewModel.StartTime = "2010/04/06";
-            viewModel.EndTime = "";
+            viewModel.admin_user_id = "admin01";
+            viewModel.familyname = "管理者";
+            viewModel.firstname = "佐藤";
+            viewModel.sex_type = "1";
+            viewModel.birthday = "1987/11/01";
+            viewModel.joined_date = "2010/04/06";
+            viewModel.leaved_date = "";
 
             return View(viewModel);
         }
@@ -27,16 +28,19 @@ namespace WebWorker.Controllers
         {
             var viewModel = new AdminListViewModel();
 
-            viewModel.Id = 10001;
-            viewModel.Name = "管理者";
-            viewModel.Sex = "男";
-            viewModel.BirthDay = "1987/11/01";
-            viewModel.StartTime = "2010/04/06";
-            viewModel.EndTime = "";
-            viewModel.Password = "password";
-            viewModel.Store = "町田";
-            viewModel.StoreFrom = "2015/04/16";
-            viewModel.StoreTo = "";
+            viewModel.admin_user_id = "admin01";
+            viewModel.familyname = "管理者";
+            viewModel.firstname = "佐藤";
+            viewModel.familyname_kana = "カンリシャ";
+            viewModel.firstname_kana = "サトウ";
+            viewModel.sex_type = "1";
+            viewModel.birthday = "1987/11/01";
+            viewModel.joined_date = "2010/04/06";
+            viewModel.leaved_date = "";
+            viewModel.password = "password";
+            viewModel.store = "町田";
+            viewModel.store_from = "2015/04/16";
+            viewModel.store_to = "";
 
             return View(viewModel);
         }
@@ -45,23 +49,31 @@ namespace WebWorker.Controllers
         {
             var viewModel = new AdminListViewModel();
 
-            viewModel.Id = 10001;
-            viewModel.Name = "管理者";
-            viewModel.Sex = "男";
-            viewModel.BirthDay = "1987/11/01";
-            viewModel.StartTime = "2010/04/06";
-            viewModel.EndTime = "";
-            viewModel.Password = "password";
-            viewModel.Store = "町田";
-            viewModel.StoreFrom = "2015/04/16";
-            viewModel.StoreTo = "";
+            viewModel.admin_user_id = "admin01";
+            viewModel.familyname = "管理者";
+            viewModel.firstname = "佐藤";
+            viewModel.familyname_kana = "カンリシャ";
+            viewModel.firstname_kana = "サトウ";
+            viewModel.sex_type = "1";
+            viewModel.birthday = "1987/11/01";
+            viewModel.joined_date = "2010/04/06";
+            viewModel.leaved_date = "";
+            viewModel.password = "password";
+            viewModel.store = "町田";
+            viewModel.store_from = "2015/04/16";
+            viewModel.store_to = "";
 
             return View(viewModel);
         }
 
         public ActionResult Register()
         {
-            return View();
+            var viewModel = new AdminListViewModel();
+
+            viewModel.sex_type = "1";
+            viewModel.store = "町田";
+
+            return View(viewModel);
         }
 
     }
