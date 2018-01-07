@@ -11,8 +11,9 @@
 
     <table class="table01">
         <tr>
-            <th>Id</th>
-            <th>名前</th>
+            <th>ユーザId</th>
+            <th>名前(姓)</th>
+            <th>名前(名)</th>
             <th>性別</th>
             <th>生年月日</th>
             <th>入社日</th>
@@ -23,12 +24,13 @@
             for (var i=0;i<5;i++)
             {
                 <tr>
-                    <td>@Model.Id</td>
-                    <td>@Model.Name</td>
-                    <td>@Model.Sex</td>
-                    <td>@Model.BirthDay</td>
-                    <td>@Model.StartTime</td>
-                    <td>@Model.EndTime</td>
+                    <td>@Model.user_id</td>
+                    <td>@Model.familyname</td>
+                    <td>@Model.firstname</td>
+                    <td>@Model.sex_type</td>
+                    <td>@Model.birthday</td>
+                    <td>@Model.joined_date</td>
+                    <td>@Model.leaved_date</td>
                     <td><button class="btn btn-primary" type="button" onclick="detailView()">詳細</button></td>
                 </tr>
             }
