@@ -13,7 +13,7 @@ namespace WebWorker.Controllers
         {
             var viewModel = new WorkerListViewModel();
 
-            viewModel.user_id = 1001;
+            viewModel.user_id = "user01";
             viewModel.familyname = "青山";
             viewModel.firstname = "大地";
             viewModel.sex_type = "1";
@@ -28,7 +28,7 @@ namespace WebWorker.Controllers
         {
             var viewModel = new WorkerListViewModel();
 
-            viewModel.user_id = 1001;
+            viewModel.user_id = "user01";
             viewModel.familyname = "青山";
             viewModel.firstname = "大地";
             viewModel.familyname_kana = "アオヤマ";
@@ -49,7 +49,7 @@ namespace WebWorker.Controllers
         {
             var viewModel = new WorkerListViewModel();
 
-            viewModel.user_id = 1001;
+            viewModel.user_id = "user01";
             viewModel.familyname = "青山";
             viewModel.firstname = "大地";
             viewModel.familyname_kana = "アオヤマ";

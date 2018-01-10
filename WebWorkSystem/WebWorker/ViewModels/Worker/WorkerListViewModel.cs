@@ -8,7 +8,7 @@ namespace WebWorker.ViewModels.Worker
     public class WorkerListViewModel
     {
         /// <summary> ユーザId </summary>
-		public int user_id { get; set; }
+		public string user_id { get; set; }
         /// <summary> 姓 </summary>
 		public string familyname { get; set; }
         /// <summary> 名 </summary>
