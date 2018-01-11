@@ -1,5 +1,7 @@
-﻿@using WebWorker.ViewModels.Worker
+﻿@*
+@using WebWorker.ViewModels.Worker
 @model WorkerListViewModel
+*@
 
 @{
     ViewBag.Title = "アルバイト情報編集";
@@ -7,51 +9,55 @@
 
 <div class="contents">
     <table class="table_User">
-        <tr>
-            <th>ユーザId</th>
-            <td>@Model.user_id</td>
-        </tr>
-        <tr>
-            <th>姓</th>
-            <td><input type="text" class="item" value="@Model.familyname"></td>
-        </tr>
-        <tr>
-            <th>名</th>
-            <td><input type="text" class="item" value="@Model.firstname"></td>
-        </tr>
-        <tr>
-            <th>セイ</th>
-            <td><input type="text" class="item" value="@Model.familyname_kana"></td>
-        </tr>
-        <tr>
-            <th>メイ</th>
-            <td><input type="text" class="item" value="@Model.firstname_kana"></td>
-        </tr>
-        <tr>
-            <th>性別</th>
-            <td>
-                <select name="sex">
-                    <option selected>@Model.sex_type</option>
-                    <option>2</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <th>生年月日</th>
-            <td><input type="text" class="item" value="@Model.birthday"></td>
-        </tr>
-        <tr>
-            <th>入社日</th>
-            <td><input type="text" class="item" value="@Model.joined_date"></td>
-        </tr>
-        <tr>
-            <th>退社日</th>
-            <td><input type="text" class="item" value="@Model.leaved_date"></td>
-        </tr>
-        <tr>
-            <th>パスワード</th>
-            <td><input type="text" class="item" value="@Model.password"></td>
-        </tr>  
+        @using (var db = new WebWorkSystemEntities())
+        {
+            var fist = db.Users.FirstOrDefault();
+            <tr>
+                <th>ユーザId</th>
+                <td>@fist.user_id</td>
+            </tr>
+            <tr>
+                <th>姓</th>
+                <td><input type="text" class="item" value="@fist.familyname"></td>
+            </tr>
+            <tr>
+                <th>名</th>
+                <td><input type="text" class="item" value="@fist.firstname"></td>
+            </tr>
+            <tr>
+                <th>セイ</th>
+                <td><input type="text" class="item" value="@fist.familyname_kana"></td>
+            </tr>
+            <tr>
+                <th>メイ</th>
+                <td><input type="text" class="item" value="@fist.firstname_kana"></td>
+            </tr>
+            <tr>
+                <th>性別</th>
+                <td>
+                    <select name="sex">
+                        <option selected>@fist.sex_type</option>
+                        <option>2</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>生年月日</th>
+                <td><input type="text" class="item" value="@fist.birthday"></td>
+            </tr>
+            <tr>
+                <th>入社日</th>
+                <td><input type="text" class="item" value="@fist.joined_date"></td>
+            </tr>
+            <tr>
+                <th>退社日</th>
+                <td><input type="text" class="item" value="@fist.leaved_date"></td>
+            </tr>
+            <tr>
+                <th>パスワード</th>
+                <td><input type="text" class="item" value="@fist.password"></td>
+            </tr>
+        }
     </table>
 
     <div>
@@ -63,6 +69,7 @@
                 <th>期間To</th>
             </tr>
             <tr>
+                @*
                 <td>
                     <select name="store">
                         <option selected>@Model.store</option>
@@ -71,6 +78,7 @@
                 </td>
                 <td><input type="text" class="item" value="@Model.store_from"></td>
                 <td><input type="text" class="item" value="@Model.store_to"></td>
+                *@
             </tr>
         </table>
     </div>

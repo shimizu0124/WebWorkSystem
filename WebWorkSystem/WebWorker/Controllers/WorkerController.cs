@@ -11,6 +11,7 @@ namespace WebWorker.Controllers
     {
         public ActionResult Index()
         {
+            /*
             var viewModel = new WorkerListViewModel();
 
             viewModel.user_id = "user01";
@@ -22,10 +23,13 @@ namespace WebWorker.Controllers
             viewModel.leaved_date = "";
 
             return View(viewModel);
+            */
+            return View();
         }
 
         public ActionResult Detail()
         {
+            /*
             var viewModel = new WorkerListViewModel();
 
             viewModel.user_id = "user01";
@@ -43,10 +47,13 @@ namespace WebWorker.Controllers
             viewModel.store_to = "";
 
             return View(viewModel);
+            */
+            return View();
         }
 
         public ActionResult Edit()
         {
+            /*
             var viewModel = new WorkerListViewModel();
 
             viewModel.user_id = "user01";
@@ -64,6 +71,8 @@ namespace WebWorker.Controllers
             viewModel.store_to = "";
 
             return View(viewModel);
+            */
+            return View();
         }
 
         public ActionResult Register()

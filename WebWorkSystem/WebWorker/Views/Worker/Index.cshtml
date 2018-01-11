@@ -1,5 +1,7 @@
-﻿@using WebWorker.ViewModels.Worker
+﻿@*
+@using WebWorker.ViewModels.Worker
 @model WorkerListViewModel
+*@
 
 @{
     ViewBag.Title = "アルバイト情報一覧";
@@ -21,26 +23,30 @@
             <th></th>
         </tr>
         @{
-            for (var i=0;i<5;i++)
+            for (var i = 0; i < 5; i++)
             {
                 <tr>
-                    <td>@Model.user_id</td>
-                    <td>@Model.familyname</td>
-                    <td>@Model.firstname</td>
-                    <td>@Model.sex_type</td>
-                    <td>@Model.birthday</td>
-                    <td>@Model.joined_date</td>
-                    <td>@Model.leaved_date</td>
-                    <td><button class="btn btn-primary" type="button" onclick="detailView()">詳細</button></td>
+                    @using (var db = new WebWorkSystemEntities())
+                {
+                    var fist = db.Users.FirstOrDefault();
+                        <td>@fist.user_id</td>
+                        <td>@fist.familyname</td>
+                        <td>@fist.firstname</td>
+                        <td>@fist.sex_type</td>
+                        <td>@fist.birthday</td>
+                        <td>@fist.joined_date</td>
+                        <td>@fist.leaved_date</td>
+                        <td><button class="btn btn-primary" type="button" onclick="detailView()">詳細</button></td>
+                    }
                 </tr>
             }
-        }   
+        }
     </table>
 
 </div>
 
 <script>
-@* 一覧画面に遷移 *@
+@* 新規登録画面に遷移 *@
     function registerView() {
         link('@Url.Action("Register", "Worker")');
     }
