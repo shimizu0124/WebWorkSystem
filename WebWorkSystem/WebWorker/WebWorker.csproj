@@ -207,9 +207,6 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\WorkerController.cs" />
     <Compile Include="Controllers\HelpController.cs" />
-    <Compile Include="Controllers\TotalMonthController.cs" />
-    <Compile Include="Controllers\TotalDayController.cs" />
-    <Compile Include="Controllers\MonthController.cs" />
     <Compile Include="Controllers\DayController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -240,10 +237,7 @@
     </Compile>
     <Compile Include="ViewModels\Admin\AdminListViewModel.cs" />
     <Compile Include="ViewModels\Help\HelpListViewModel.cs" />
-    <Compile Include="ViewModels\TotalDay\TotalDayListViewModel.cs" />
     <Compile Include="ViewModels\Day\DayListViewModel.cs" />
-    <Compile Include="ViewModels\Month\MonthListViewModel.cs" />
-    <Compile Include="ViewModels\TotalMonth\TotalMonthListViewModel.cs" />
     <Compile Include="ViewModels\Worker\WorkerListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -301,11 +295,7 @@
     <Content Include="Views\Day\Edit.cshtml" />
     <Content Include="Views\Day\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Month\Index.cshtml" />
-    <Content Include="Views\Month\Edit.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\TotalDay\Index.cshtml" />
-    <Content Include="Views\TotalMonth\Index.cshtml" />
     <Content Include="Views\Help\Index.cshtml" />
     <Content Include="Views\Worker\Edit.cshtml" />
     <Content Include="Views\Worker\Index.cshtml" />
@@ -313,7 +303,6 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Register.cshtml" />
-    <Content Include="Views\TotalDay\Edit.cshtml" />
     <Content Include="Views\Worker\Detail.cshtml" />
     <Content Include="Views\Admin\Detail.cshtml" />
   </ItemGroup>

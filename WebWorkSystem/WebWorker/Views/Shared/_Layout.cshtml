@@ -16,7 +16,7 @@
             t = setInterval("DspClk()", 500);
         </script>
         <form name="ClkForm">
-            <INPUT type="text" name="Input">
+            <input type="text" name="time">
         </form>
     </div>
 
@@ -25,15 +25,6 @@
         
         <div class="MenuCell" onclick="link('@Url.Action("Index", "Day")');">
             <p>勤怠一覧(個人-日次)</p>
-        </div>
-        <div class="MenuCell" onclick="link('@Url.Action("Index", "Month")');">
-            <p>勤怠一覧(個人-月次)</p>
-        </div>
-        <div class="MenuCell" onclick="link('@Url.Action("Index", "TotalDay")');">
-            <p>勤怠一覧(全体-日次)</p>
-        </div>
-        <div class="MenuCell" onclick="link('@Url.Action("Index", "TotalMonth")');">
-            <p>勤怠一覧(全体-月次)</p>
         </div>
         <div class="MenuCell" onclick="link('@Url.Action("Index", "Help")');">
             <p>ヘルプ集計</p>
@@ -72,7 +63,7 @@
       Minutes = DD.getMinutes();
       Seconds = DD.getSeconds();
       status = Hours + "時" + Minutes + "分" + Seconds +"秒";
-      document.ClkForm.Input.value = Hours + "時" + Minutes + "分" + Seconds +"秒";
+      document.ClkForm.time.value = Hours + "時" + Minutes + "分" + Seconds +"秒";
     }
 </script>
 
