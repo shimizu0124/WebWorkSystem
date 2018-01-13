@@ -6,75 +6,77 @@
 }
 
 <div class="contents">
-    <table>
-        <tr>
-            <td>
-                <label>日付</label>
-            </td>
-            <td>
-                <select name="yyyy">
-                    <option value="2015">2015</option>
-                    <option value="2016">2016</option>
-                    <option value="2017" selected>2017</option>
-                </select>
-            </td>
-            <td>年</td>
-            <td>
-                <select name="MM">
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03" selected>03</option>
-                </select>
-            </td>
-            <td>月</td>
-            <td>
-                <select name="dd">
-                    <option value="01" selected>01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                </select>
-            </td>
-            <td>日</td>
-        </tr>
-    </table>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label>日付：</label>
+                </td>
+                <td>
+                    <select name="year">
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017" selected>2017</option>
+                    </select>年
+                </td>
+                <td>
+                    <select name="month">
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3" selected>03</option>
+                    </select>月
+                </td>
+                <td>
+                    <select name="day">
+                        <option value="1" selected>01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                    </select>日
+                </td>
+            </tr>
+        </table>
 
-    <table>
-        <tr>
-            <td>
-                <label>名前</label>
-            </td>
-            <td>
-                <select name="name">
-                    <option value="青山大地">青山大地</option>
-                    <option value="岩崎かおり">岩崎かおり</option>
-                </select>
-            </td>
-        </tr>
-    </table>
+        <table>
+            <tr>
+                <td>
+                    <label>名前：</label>
+                </td>
+                <td>
+                    <select name="name">
+                        <option value="青山大地">青山大地</option>
+                        <option value="岩崎かおり">岩崎かおり</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
 
-    <button class="btn btn-info" type="button" onclick="indexView()">検索する</button>
+        @*<button type="submit">検索する</button>*@
+        <button type="button" class="btn btn-info" onclick="indexView()">検索する</button>
+    </form>
 
+    <form>
+        <table class="table01">
+            <tr>
+                <th>出勤時間</th>
+                <th>休憩開始時間</th>
+                <th>休憩終了時間</th>
+                <th>退勤時間</th>
+                <th>実勤務時間</th>
+                <th>ヘルプ先</th>
+            </tr>
+            <tr>
+                <td>@Model.StartTime</td>
+                <td>@Model.BreakStartTime</td>
+                <td>@Model.BreakEndTime</td>
+                <td>@Model.EndTime</td>
+                <td>@Model.WorkTime</td>
+                <td>@Model.Help</td>
+            </tr>
+        </table>
 
-    <table class="table01">
-        <tr>
-            <th>出勤時間</th>
-            <th>休憩開始時間</th>
-            <th>休憩終了時間</th>
-            <th>退勤時間</th>
-            <th>実勤務時間</th>
-            <th>ヘルプ先</th>
-        </tr>
-        <tr>
-            <td>@Model.StartTime</td>
-            <td>@Model.BreakStartTime</td>
-            <td>@Model.BreakEndTime</td>
-            <td>@Model.EndTime</td>
-            <td>@Model.WorkTime</td>
-            <td>@Model.Help</td>
-        </tr>
-    </table>
-
-        <button class="btn btn-primary" type="button" onclick="editView()">編集する</button>
+        @*<button type="submit">編集する</button>*@
+        <button type="button" class="btn btn-primary" onclick="editView()">編集する</button>
+    </form>
 
 </div>
 

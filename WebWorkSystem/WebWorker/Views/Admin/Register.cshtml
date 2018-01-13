@@ -6,77 +6,79 @@
 }
 
 <div class="contents">
-    <table class="table_User">
-        <tr>
-            <th>AdminユーザId</th>
-            <td><input type="text" class="item" value=""></td>
-        </tr>
-        <tr>
-            <th>姓</th>
-            <td><input type="text" class="item" value=""></td>
-        </tr>
-        <tr>
-            <th>名</th>
-            <td><input type="text" class="item" value=""></td>
-        </tr>
-        <tr>
-            <th>セイ</th>
-            <td><input type="text" class="item" value=""></td>
-        </tr>
-        <tr>
-            <th>メイ</th>
-            <td><input type="text" class="item" value=""></td>
-        </tr>
-        <tr>
-            <th>性別</th>
-            <td>
-                <select name="sex">
-                    <option selected>@Model.sex_type</option>
-                    <option>2</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <th>生年月日</th>
-            <td><input type="text" class="item" value=""></td>
-        </tr>
-        <tr>
-            <th>入社日</th>
-            <td><input type="text" class="item" value=""></td>
-        </tr>
-        <tr>
-            <th>退社日</th>
-            <td><input type="text" class="item" value=""></td>
-        </tr>
-        <tr>
-            <th>パスワード</th>
-            <td><input type="text" class="item" value=""></td>
-        </tr>
-    </table>
-
-    <div>
-        <p>店舗</p>
+    <form>
         <table class="table_User">
             <tr>
-                <th>店舗</th>
-                <th>期間From</th>
-                <th>期間To</th>
+                <th>AdminユーザId</th>
+                <td><input type="text" class="item" name="admin_user_id" value=""></td>
             </tr>
             <tr>
+                <th>姓</th>
+                <td><input type="text" class="item" name="familyname" value=""></td>
+            </tr>
+            <tr>
+                <th>名</th>
+                <td><input type="text" class="item" name="firstname" value=""></td>
+            </tr>
+            <tr>
+                <th>セイ</th>
+                <td><input type="text" class="item" name="familyname_kana" value=""></td>
+            </tr>
+            <tr>
+                <th>メイ</th>
+                <td><input type="text" class="item" name="firstname_kana" value=""></td>
+            </tr>
+            <tr>
+                <th>性別</th>
                 <td>
-                    <select name="store">
-                        <option selected>@Model.store</option>
-                        <option></option>
+                    <select name="sex_type">
+                        <option value="1" selected>@Model.sex_type</option>
+                        <option value="2">女</option>
                     </select>
                 </td>
-                <td><input type="text" class="item" value=""></td>
-                <td><input type="text" class="item" value=""></td>
+            </tr>
+            <tr>
+                <th>生年月日</th>
+                <td><input type="date" class="item" name="birthday" value=""></td>
+            </tr>
+            <tr>
+                <th>入社日</th>
+                <td><input type="date" class="item" name="joined_date" value=""></td>
+            </tr>
+            <tr>
+                <th>退社日</th>
+                <td><input type="date" class="item" name="leaved_date" value=""></td>
+            </tr>
+            <tr>
+                <th>パスワード</th>
+                <td><input type="text" class="item" name="password" value=""></td>
             </tr>
         </table>
-    </div>
 
-    <button class="btn btn-default" type="button" onclick="indexView()">戻る</button>
-    <button class="btn btn-default" type="button" onclick="indexView()">登録する</button>
+        <div>
+            <p>店舗</p>
+            <table class="table_User">
+                <tr>
+                    <th>店舗</th>
+                    <th>期間From</th>
+                    <th>期間To</th>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="store">
+                            <option selected>@Model.store</option>
+                            <option></option>
+                        </select>
+                    </td>
+                    <td><input type="date" class="item" name="store_from" value=""></td>
+                    <td><input type="date" class="item" name="store_to" value=""></td>
+                </tr>
+            </table>
+        </div>
+
+        <button type="button" class="btn btn-default" onclick="indexView()">戻る</button>
+        <button type="button" class="btn btn-primary" onclick="indexView()">登録する</button>
+    </form>
 
 </div>
 

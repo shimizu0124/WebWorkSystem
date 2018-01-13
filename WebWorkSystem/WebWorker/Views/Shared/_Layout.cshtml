@@ -10,8 +10,7 @@
 </head>
 <body>
     <div class="header">
-        勤怠管理システムFSP
-        <br>
+        <div>勤怠管理システムFSP</div>
         <script>
             t = setInterval("DspClk()", 500);
         </script>
@@ -62,7 +61,7 @@
       Hours = DD.getHours();
       Minutes = DD.getMinutes();
       Seconds = DD.getSeconds();
-      status = Hours + "時" + Minutes + "分" + Seconds +"秒";
+      status = Hours + "時" + Minutes + "分" + Seconds + "秒";
       document.ClkForm.time.value = Hours + "時" + Minutes + "分" + Seconds +"秒";
     }
 </script>
