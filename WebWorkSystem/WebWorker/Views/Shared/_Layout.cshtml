@@ -8,20 +8,23 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body onload="getTime()">
     <div class="header">
         <div>勤怠管理システムFSP</div>
+        @*
         <script>
-            t = setInterval("DspClk()", 500);
+            var t = setInterval("DspClk()", 500);
         </script>
         <form name="ClkForm">
             <input type="text" name="time">
         </form>
+        *@
+        <div id="labelTime"></div>
     </div>
 
     <div class="sidemenu">
-        <div class="view-name">MENU</div>       
-        
+        <div class="view-name">MENU</div>
+
         <div class="MenuCell" onclick="link('@Url.Action("Index", "Day")');">
             <p>勤怠一覧(個人-日次)</p>
         </div>
@@ -37,7 +40,7 @@
         <div class="MenuCell" onclick="link('@Url.Action("Login", "Account")');">
             <p>ログアウト</p>
         </div>
-        
+
     </div>
 
     <div class="contents">
@@ -55,16 +58,32 @@
 </html>
 
 <script>
-    t = 0;
+    function getTime() {
+        var t = 0;
+        t = setInterval("calcTime()", 500);
+    }
+    function calcTime() {
+        var DD = new Date();
+        var Hours = DD.getHours();
+        var Minutes = DD.getMinutes();
+        var Seconds = DD.getSeconds();
+        var time = Hours + "時" + Minutes + "分" + Seconds +"秒";
+        var labelTime_Obj = document.getElementById("labelTime");
+        labelTime_Obj.innerHTML = time;
+    }
+</script>
+
+@*
+<script>
     function DspClk() {
-      DD = new Date();
-      Hours = DD.getHours();
-      Minutes = DD.getMinutes();
-      Seconds = DD.getSeconds();
-      status = Hours + "時" + Minutes + "分" + Seconds + "秒";
+      var DD = new Date();
+      var Hours = DD.getHours();
+      var Minutes = DD.getMinutes();
+      var Seconds = DD.getSeconds();
       document.ClkForm.time.value = Hours + "時" + Minutes + "分" + Seconds +"秒";
     }
 </script>
+*@
 
 <script>
     function link(url) {
