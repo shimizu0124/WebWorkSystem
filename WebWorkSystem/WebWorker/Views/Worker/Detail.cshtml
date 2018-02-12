@@ -1,58 +1,49 @@
-﻿@*
-@using WebWorker.ViewModels.Worker
-@model WorkerListViewModel
-*@
-
-@{
+﻿@{
     ViewBag.Title = "アルバイト情報詳細";
 }
 
 <div class="contents">
     <table class="table_User">
-        @using (var db = new WebWorkSystemEntities())
-        {
-            var fist = db.Users.FirstOrDefault();
-            <tr>
-                <th>ユーザID</th>
-                <td>@fist.user_id</td>
-            </tr>
-            <tr>
-                <th>姓</th>
-                <td>@fist.familyname</td>
-            </tr>
-            <tr>
-                <th>名</th>
-                <td>@fist.firstname</td>
-            </tr>
-            <tr>
-                <th>セイ</th>
-                <td>@fist.familyname_kana</td>
-            </tr>
-            <tr>
-                <th>メイ</th>
-                <td>@fist.firstname_kana</td>
-            </tr>
-            <tr>
-                <th>性別</th>
-                <td>@fist.sex_type</td>
-            </tr>
-            <tr>
-                <th>生年月日</th>
-                <td>@fist.birthday</td>
-            </tr>
-            <tr>
-                <th>入社日</th>
-                <td>@fist.joined_date</td>
-            </tr>
-            <tr>
-                <th>退社日</th>
-                <td>@fist.leaved_date</td>
-            </tr>
-            <tr>
-                <th>パスワード</th>
-                <td>@fist.password</td>
-            </tr>
-        }
+        <tr>
+            <th>ユーザID</th>
+            <td>@Model.user_id</td>
+        </tr>
+        <tr>
+            <th>姓</th>
+            <td>@Model.familyname</td>
+        </tr>
+        <tr>
+            <th>名</th>
+            <td>@Model.firstname</td>
+        </tr>
+        <tr>
+            <th>セイ</th>
+            <td>@Model.familyname_kana</td>
+        </tr>
+        <tr>
+            <th>メイ</th>
+            <td>@Model.firstname_kana</td>
+        </tr>
+        <tr>
+            <th>性別</th>
+            <td>@Model.sex_type</td>
+        </tr>
+        <tr>
+            <th>生年月日</th>
+            <td>@Model.birthday</td>
+        </tr>
+        <tr>
+            <th>入社日</th>
+            <td>@Model.joined_date</td>
+        </tr>
+        <tr>
+            <th>退社日</th>
+            <td>@Model.leaved_date</td>
+        </tr>
+        <tr>
+            <th>パスワード</th>
+            <td>@Model.password</td>
+        </tr>
     </table>
 
     <div>
@@ -64,6 +55,9 @@
                 <th>期間To</th>
             </tr>
             <tr>
+                <td></td>
+                <td></td>
+                <td></td>
                 @*
                 <td>@Model.store</td>
                 <td>@Model.store_from</td>
@@ -74,7 +68,7 @@
     </div>
 
     <button type="button" class="btn btn-default" onclick="indexView()">戻る</button>
-    <button type="button" class="btn btn-primary" onclick="editView()">編集する</button>
+    <button type="button" class="btn btn-primary" onclick="link('@Url.Action("Edit", Model)');">編集する</button>
 
 </div>
 
@@ -82,9 +76,5 @@
 @* 一覧画面に遷移 *@
     function indexView() {
         link('@Url.Action("Index", "Worker")');
-    }
-@* 編集画面に遷移 *@
-    function editView() {
-        link('@Url.Action("Edit", "Worker")');
     }
 </script>

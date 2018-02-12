@@ -1,9 +1,4 @@
-﻿@*
-@using WebWorker.ViewModels.Worker
-@model WorkerListViewModel
-*@
-
-@{
+﻿@{
     ViewBag.Title = "アルバイト情報一覧";
 }
 
@@ -22,22 +17,23 @@
             <th>退社日</th>
             <th></th>
         </tr>
-        @{
-            for (var i = 0; i < 5; i++)
+        @using (var db = new WebWorkSystemEntities())
+        {
+            var resultlist = db.Users.ToList();
+
+            foreach (var result in resultlist)
             {
                 <tr>
-                    @using (var db = new WebWorkSystemEntities())
-                {
-                    var fist = db.Users.FirstOrDefault();
-                        <td>@fist.user_id</td>
-                        <td>@fist.familyname</td>
-                        <td>@fist.firstname</td>
-                        <td>@fist.sex_type</td>
-                        <td>@fist.birthday</td>
-                        <td>@fist.joined_date</td>
-                        <td>@fist.leaved_date</td>
-                        <td><button type="button" class="btn btn-primary" onclick="detailView()">詳細</button></td>
-                    }
+                    <td>@result.user_id</td>
+                    <td>@result.familyname</td>
+                    <td>@result.firstname</td>
+                    <td>@result.sex_type</td>
+                    <td>@result.birthday</td>
+                    <td>@result.joined_date</td>
+                    <td>@result.leaved_date</td>
+                    @*<td><button type="button" class="btn btn-primary" onclick="detailView()">詳細</button></td>
+                    <td><button type="button" class="btn btn-primary" onclick="link('@Url.Action("Detail", "Worker")');">詳細</button></td>*@
+                    <td><button type="button" class="btn btn-primary" onclick="link('@Url.Action("Detail", result)');">詳細</button></td>
                 </tr>
             }
         }
@@ -49,9 +45,5 @@
 @* 新規登録画面に遷移 *@
     function registerView() {
         link('@Url.Action("Register", "Worker")');
-    }
-@* 詳細画面に遷移 *@
-    function detailView() {
-        link('@Url.Action("Detail", "Worker")');
     }
 </script>
