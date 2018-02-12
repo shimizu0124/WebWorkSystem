@@ -5,10 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1dcf1a673c264030a2b9a88445720144" Name="Diagram1">
-        <EntityTypeShape EntityType="WebWorkSystemModel.AdminUsers" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebWorkSystemModel.AdminUserStore" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebWorkSystemModel.Users" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WebWorkSystemModel.UserStore" Width="1.5" PointX="6.875" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebWorkSystemModel.AdminUsers" Width="1.5" PointX="9.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebWorkSystemModel.AdminUserStore" Width="1.5" PointX="7.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebWorkSystemModel.Users" Width="1.5" PointX="0.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebWorkSystemModel.UserStore" Width="1.5" PointX="2.5" PointY="3.5" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

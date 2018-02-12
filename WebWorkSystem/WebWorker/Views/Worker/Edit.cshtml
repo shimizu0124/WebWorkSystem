@@ -14,8 +14,8 @@
             {
                 var fist = db.Users.FirstOrDefault();
                 <tr>
-                    <th>ユーザId</th>
-                    <td>@fist.user_id</td>
+                    <th>ユーザID</th>
+                    <td><input type="text" class="item" name="user_id" value="@fist.user_id"></td>
                 </tr>
                 <tr>
                     <th>姓</th>
@@ -68,8 +68,13 @@
                     <th>店舗</th>
                     <th>期間From</th>
                     <th>期間To</th>
+                    <th></th>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" class="btn btn-danger" onclick="detailView()">削除</button></td>
                     @*
                     <td>
                         <select name="store">
@@ -86,7 +91,7 @@
  
         <button type="button" class="btn btn-default" onclick="detailView()">戻る</button>
         <button type="button" class="btn btn-primary" onclick="indexView()">変更する</button>
-        <button type="button" class="btn btn-danger" onclick="indexView()">削除</button>
+        <button type="button" class="btn btn-danger" onclick="indexView()">削除する</button>
     </form>
 
 </div>

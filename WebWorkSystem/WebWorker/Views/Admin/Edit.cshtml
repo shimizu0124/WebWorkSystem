@@ -9,8 +9,8 @@
     <form>
         <table class="table_User">
             <tr>
-                <th>AdminユーザId</th>
-                <td>@Model.admin_user_id</td>
+                <th>AdminユーザID</th>
+                <td><input type="text" class="item" name="admin_user_id" value="@Model.admin_user_id"></td>
             </tr>
             <tr>
                 <th>姓</th>
@@ -62,8 +62,14 @@
                     <th>店舗</th>
                     <th>期間From</th>
                     <th>期間To</th>
+                    <th></th>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" class="btn btn-danger" onclick="detailView()">削除</button></td>
+                    @*
                     <td>
                         <select name="store">
                             <option selected>@Model.store</option>
@@ -72,6 +78,7 @@
                     </td>
                     <td><input type="text" class="item" name="store_from" value="@Model.store_from"></td>
                     <td><input type="text" class="item" name="store_to" value="@Model.store_to"></td>
+                    *@
                 </tr>
             </table>
         </div>
