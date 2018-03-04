@@ -1,12 +1,9 @@
-﻿@using WebWorker.ViewModels.Worker
-@model WorkerListViewModel
-
-@{
+﻿@{
     ViewBag.Title = "アルバイト新規登録";
 }
 
 <div class="contents">
-    <form>
+    <form method="post" action="@Url.Action("exeRegister")">
         <table class="table_User">
             <tr>
                 <th>ユーザID</th>
@@ -32,7 +29,7 @@
                 <th>性別</th>
                 <td>
                     <select name="sex_type">
-                        <option value="1" selected>@Model.sex_type</option>
+                        <option value="1" selected>男</option>
                         <option value="2">女</option>
                     </select>
                 </td>
@@ -66,7 +63,7 @@
                 <tr>
                     <td>
                         <select name="store">
-                            <option selected>@Model.store</option>
+                            <option selected>町田</option>
                             <option></option>
                         </select>
                     </td>
@@ -77,7 +74,7 @@
         </div>
    
         <button type="button" class="btn btn-default" onclick="indexView()">戻る</button>
-        <button type="button" class="btn btn-primary" onclick="indexView()">登録する</button>
+        <button type="submit" class="btn btn-primary">登録する</button>
     </form>
 
 </div>

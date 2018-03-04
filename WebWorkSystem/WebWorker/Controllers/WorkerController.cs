@@ -32,14 +32,41 @@ namespace WebWorker.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult exeEdit(Users model)
+        {
+            using (var db = new WebWorkSystemEntities())
+            {
+                model.created_at = DateTime.Parse("2018-03-01 00:00:00");
+                model.created_by = "管理者";
+                model.updated_at = DateTime.Parse("2018-03-01 00:00:00");
+                model.updated_by = "管理者";
+
+                db.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        }
+
         public ActionResult Register()
         {
-            var viewModel = new WorkerListViewModel();
+            return View();
+        }
 
-            viewModel.sex_type = "1";
-            viewModel.store = "町田";
+        [HttpPost]
+        public ActionResult exeRegister(Users model)
+        {
+            using (var db = new WebWorkSystemEntities())
+            {
+                model.created_at = DateTime.Parse("2018-03-01 00:00:00");
+                model.created_by = "管理者";
+                model.updated_at = DateTime.Parse("2018-03-01 00:00:00");
+                model.updated_by = "管理者";
 
-            return View(viewModel);
+                db.Users.Add(model);
+                db.SaveChanges();
+            }
+            return View("Index");
         }
 
     }
